@@ -106,7 +106,7 @@ public class fourthJframe extends javax.swing.JFrame {
         });
 
         jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\25uma\\Downloads\\next.png")); // NOI18N
-        jButton4.setToolTipText("Next querry");
+        jButton4.setToolTipText("Next Querry");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -244,6 +244,9 @@ public class fourthJframe extends javax.swing.JFrame {
         }catch(SQLException se){
             se.printStackTrace();
         }
+        jButton4.setToolTipText()
+               
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
