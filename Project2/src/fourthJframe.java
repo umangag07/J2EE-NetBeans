@@ -20,6 +20,7 @@ public class fourthJframe extends javax.swing.JFrame {
         Connection conn = null;
         Statement st= null;
         ResultSet rs = null;
+        int n=0;
     public fourthJframe() {
         initComponents();
         
@@ -29,9 +30,13 @@ public class fourthJframe extends javax.swing.JFrame {
             String sql;
             sql = "Select * from emp ";
             rs = st.executeQuery(sql);
-            
+            rs.last();
+            n= rs.getRow();
+            System.out.println(n);
         }catch(SQLException se){
             se.printStackTrace();
+        }catch(Exception e){
+            
         }
     }
 
@@ -106,7 +111,7 @@ public class fourthJframe extends javax.swing.JFrame {
         });
 
         jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\25uma\\Downloads\\next.png")); // NOI18N
-        jButton4.setToolTipText("Next Querry");
+        jButton4.setToolTipText("Next Record");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -199,8 +204,8 @@ public class fourthJframe extends javax.swing.JFrame {
         jTextField2.setText(rs.getString("name"));
         jTextField3.setText(String.valueOf(rs.getInt("salary")));
         
-        }catch(SQLException se){
-            se.printStackTrace();
+        }catch(Exception se){
+            
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -213,9 +218,8 @@ public class fourthJframe extends javax.swing.JFrame {
         jTextField3.setText(String.valueOf(rs.getInt("salary")));
         
         
-        }catch(SQLException se){
-            se.printStackTrace();
-        }
+        }catch(Exception e){
+           }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -226,9 +230,13 @@ public class fourthJframe extends javax.swing.JFrame {
         jTextField2.setText(rs.getString("name"));
         jTextField3.setText(String.valueOf(rs.getInt("salary")));
         
-        
-        }catch(SQLException se){
-            se.printStackTrace();
+        if(rs.getRow()==1){
+            jButton3.setToolTipText("Reached the first record");
+        }else{
+            jButton3.setToolTipText("Move to next record");
+        }
+       }catch(Exception e){
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -240,11 +248,15 @@ public class fourthJframe extends javax.swing.JFrame {
         jTextField1.setText(String.valueOf(rs.getInt("id")));
         jTextField2.setText(rs.getString("name"));
         jTextField3.setText(String.valueOf(rs.getInt("salary")));
-        
-        }catch(SQLException se){
-            se.printStackTrace();
+        if(rs.getRow()==1){
+            jButton4.setToolTipText("Reached the last record");
+        }else{
+            jButton4.setToolTipText("Move to next record record");
         }
-        jButton4.setToolTipText()
+        }catch(Exception e){
+            
+        }
+       
                
         
     }//GEN-LAST:event_jButton4ActionPerformed

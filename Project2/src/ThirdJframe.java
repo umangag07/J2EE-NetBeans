@@ -269,9 +269,7 @@ public class ThirdJframe extends javax.swing.JFrame {
             jTextField2.setText(rs.getString("name"));
             jTextField3.setText(String.valueOf(rs.getInt("salary")));
             
-            rs.close();
-            stmt.close();
-            conn.close();
+            
         }catch(SQLException se){
             se.printStackTrace();
         }

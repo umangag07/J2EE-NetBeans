@@ -24,6 +24,8 @@ public class EmpDetails extends javax.swing.JFrame {
     /**
      * Creates new form EmpDetails
      */
+        Connection conn=null;
+        Statement st=null;
     public EmpDetails() {
         initComponents();
     }
@@ -120,8 +122,7 @@ public class EmpDetails extends javax.swing.JFrame {
         //  Show Data Button
        // TODO add your handling code here:
        //establishing a connection
-        Connection conn=null;
-        Statement st=null;
+        
         try
         {
             //Open a connection(like a road)

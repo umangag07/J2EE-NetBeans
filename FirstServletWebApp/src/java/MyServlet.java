@@ -31,13 +31,18 @@ public class MyServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String n = request.getParameter("n1");
+            String c = request.getParameter("n2");
+            String s = request.getParameter("n3");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet MyServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MyServlet at " + request.getContextPath() + "</h1>");
+//            out.println("<h1>Servlet MyServlet at " + request.getContextPath() + "</h1>");
+            out.println("Name="+n+"<br><br>Course="+c+"<br><br>Stream= "+s);
+            out.println();
             out.println("</body>");
             out.println("</html>");
         }
